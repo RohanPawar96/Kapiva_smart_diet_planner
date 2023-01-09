@@ -1,38 +1,412 @@
-.App {
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "jost", sans-serif;
+}
+
+#more {
+  display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bold {
+  font-weight: 900;
+}
+
+.container {
+  padding: 0 !important;
+  max-width: 100% !important;
+}
+
+.page-content {
+  padding: 0;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+#free-img {
+  width: 10%;
+}
+
+/************** Home **************/
+
+.main {
+  background-color: #f2f1eb;
+}
+
+.main .banner {
+  /* width: 100%; */
+  padding: 0 5%;
+}
+.main .banner img.bannerimg {
+  width: 100%;
+}
+
+.main .banner .bannerContent {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+.main .choose {
+  padding: 0 5%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.main .choose .line-1 {
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.main .choose .line-2 {
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.main .choose ul.options {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 10% 0;
+}
+
+.main .choose ul.options li.opt-card {
+  width: 30%;
+}
+
+.main .choose ul.options li.opt-card p.opt-card-heading {
+  height: 30%;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.main .choose ul.options li.opt-card p.opt-card-description {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.main button.diet-plan-button {
+  width: 100%;
+  height: 52px;
+  background-color: #6a8330;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  border: 0;
+  text-align: center;
+  align-items: center;
+}
+
+.main button.diet-plan-button p.button-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: #f2f1eb;
+  font-family: "jost", sans-serif;
+  width: 80%;
+}
+
+.closing-back {
+  padding: 2% 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.MuiDialog-paper {
+  width: 100%;
+  position: absolute !important;
+  margin: 0 !important;
+  bottom: 0 !important;
+}
+
+.MuiDialogTitle-root {
+  padding: 0 !important;
+}
+
+.user-register-content {
+  text-align: center;
+  padding: 0 5% 10%;
+}
+
+.user-register-content .pop-header {
+  font-size: 18px;
+  font-weight: 600;
+  color: #c97b5a;
+}
+
+.user-register-content .pop-description {
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 2%;
+}
+
+.user-register-content .registerForm {
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+.ReactFlagsSelect-module_selectBtn__19wW7 {
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  font-family: inherit;
+  color: #4d4d4d;
+  border: 1px solid #6c6c6c69 !important;
+  border-radius: 4px;
+  background: transparent;
+}
+.opt-row {
+  padding: 2% 0;
+}
+
+.opt-card-img {
+  width: auto;
+}
+
+/* input[type="password"] {
+  width: 25px !important;
+  height: 25px !important;
+  text-align: left !important;
+  margin: 0 !important;
+} */
+
+.MuiOutlinedInput-input {
+  padding: 12px 14px !important;
+  font-size: 14px !important;
+  border-color: #6a8330 !important;
+}
+
+.MuiOutlinedInput-colorSecondary {
+  border-color: #6a8330;
+}
+
+.error {
+  color: red;
+}
+
+.headings {
+  font-size: 17px;
+  color: #333333db;
+  margin: 5%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.screenshots {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+  height: 330px;
+  /* justify-content: space-around; */
+  place-content: center;
+  margin: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.screenshots img {
+  width: 40%;
+  height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.reviews {
+  /* width: 100%; */
+  padding: 0 10% 20%;
+  /* margin-bottom: 15%; */
+}
+
+.reviews ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 10%;
+  row-gap: 3%;
+}
+
+.reviews ul li.story-card {
+  width: 100%;
+  height: 100%;
+}
+
+.reviews ul li.story-card .story-image {
+  width: 100%;
+  /* height: 30%; */
+}
+
+.reviews ul li.story-card .story-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.reviews ul li.story-card .story-name {
+  color: #606060;
+  font-size: 10px;
+  margin-top: 6%;
+  margin-bottom: -5px;
+}
+
+.reviews ul li.story-card .story-desc {
+  font-size: 12px;
+}
+
+.reviews ul li.story-card .story-seperator {
+  width: 10%;
+  margin: 2% 0;
+  background-color: #000000;
+}
+
+img.stars {
+  width: 30%;
+}
+
+.read-more-button {
+  color: #c97b5a;
+}
+
+.read-more-button:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 800px) {
+  .page-heading {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  .opt-card-img img {
+    width: 119.02px;
+    height: 119.02px;
+  }
+
+  .main .choose ul.options li.opt-card p.opt-card-heading {
+    height: 30%;
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  .main .choose ul.options li.opt-card p.opt-card-description {
+    font-size: 28px;
+    font-weight: 400;
+  }
+
+  .main .banner {
+    padding: 0;
+    width: 100%;
+    max-width: 100% !important;
+  }
+
+  .main .choose {
+    padding: 0 5%;
+  }
+
+  .main .choose .line-1 {
+    font-size: 56px;
+  }
+
+  .main .choose .line-2 {
+    font-size: 30px;
+  }
+
+  .screenshots {
+    height: auto;
+    overflow: hidden;
+    column-gap: 105px;
+  }
+
+  .screenshots img {
+    height: auto;
+  }
+
+  .main button.diet-plan-button {
+    align-items: center;
+    background-color: #6a8330;
+    border: 0;
+    bottom: 0;
+    display: flex;
+    height: 52px;
+    justify-content: space-evenly;
+    /* position: sticky; */
+    text-align: center;
+    width: 40%;
+    /* place-content: center; */
+    margin: 5% 30% 0;
+    border-radius: 5px;
+  }
+
+  .main button.diet-plan-button p.button-text {
+    width: 50%;
+  }
+
+  .reviews ul li.story-card {
+    width: 230px !important;
+    height: 100% !important;
+    text-align: left;
+  }
+
+  .reviews ul li.story-card .story-image {
+    width: 204px !important;
+    height: 230px !important;
+  }
+
+  .reviews ul {
+    place-items: center !important;
+    column-gap: 0 !important;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .reviews {
+    padding: 0 10% 5%;
+    text-align: -webkit-center;
+  }
+
+  .headings {
+    font-size: 35px !important;
+  }
+
+  .screenshots {
+    width: 60% !important;
+    margin: 0 20% !important;
+  }
+
+  .reviews ul li.story-card .story-name {
+    color: #606060;
+    font-size: 17px;
+  }
+
+  img.stars {
+    width: 20%;
+  }
+
+  .reviews ul li.story-card .story-seperator {
+    width: 10%;
+    margin: 1% 0;
+    background-color: #000000;
+    border: 1px solid #0000;
+  }
+
+  .reviews ul li.story-card .story-desc {
+    font-size: 17px;
   }
 }

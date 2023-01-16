@@ -122,12 +122,12 @@ export default function UserOtpVerification({
         </DialogTitle>
         <p
           className="pop-description"
-          style={{ fontSize: "14px", marginBottom: "2%" }}
+          style={{ fontSize: "15px", marginBottom: "2%" }}
         >
           Veriry your phone number the OTP send to the number{" "}
           <span style={{ color: "#c97b5a" }}>+91 - {number}</span>
         </p>
-        <div className="opt-verification">
+        <div className="opt-verification" id="opt-verification">
           <div className="opt-row">
             <OTPInput
               value={otp}

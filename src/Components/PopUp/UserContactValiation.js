@@ -2,7 +2,7 @@ import React from "react";
 import Button from "@mui/material/Button";
 import DialogTitle from "@mui/material/DialogTitle";
 import ReactFlagsSelect from "react-flags-select";
-import { TextField } from "@mui/material";
+import { CircularProgress, Fade, TextField } from "@mui/material";
 import { auth, firebase } from "../../Assets/js/firebase";
 
 export default function UserContactValiation({
@@ -17,6 +17,9 @@ export default function UserContactValiation({
   setOtptrack,
 }) {
   const [country, setCountry] = React.useState("IN");
+  const [disabled, setDisabled] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
+  const patternNumber = new RegExp("^[6-9][0-9]{9}$");
 
   const checkInput = (e) => {
     setNumber(e);
@@ -24,7 +27,8 @@ export default function UserContactValiation({
       setError(false);
     } else {
       if (isFinite(e)) {
-        if (e.length <= 10 && e.length >= 10) {
+        if (patternNumber.test(e)) {
+          console.log(patternNumber.test(e));
           setError(false);
         } else {
           setError(true);
@@ -41,6 +45,8 @@ export default function UserContactValiation({
   };
 
   function sendOtp() {
+    setDisabled(true);
+    setLoading(true);
     if (number.length === 0) {
       setError(true);
     } else {
@@ -85,6 +91,7 @@ export default function UserContactValiation({
           selected="IN"
           onSelect={(e) => setCountry(e)}
           placeholder="Select Country"
+          disabled={true}
         />
         <TextField
           id="outlined-basic"
@@ -108,16 +115,29 @@ export default function UserContactValiation({
       </div>
       <Button
         style={{
-          backgroundColor: error ? "gray" : "#6a8330",
+          backgroundColor: error || disabled ? "gray" : "#6a8330",
           width: "100%",
           color: "#fff",
           borderRadius: "2px",
           margin: "5% 0",
         }}
-        disabled={error ? true : false}
+        id="button-send-otp"
+        disabled={error || disabled ? true : false}
         onClick={() => sendOtp()}
       >
-        Continue
+        {loading ? (
+          <Fade
+            in={loading}
+            style={{
+              transitionDelay: loading ? "800ms" : "0ms",
+            }}
+            unmountOnExit
+          >
+            <CircularProgress thickness={6} style={{ color: "white" }} />
+          </Fade>
+        ) : (
+          "Continue"
+        )}
       </Button>
       <div id="recaptcha-container"></div>
     </div>

@@ -190,12 +190,9 @@ li {
   width: auto;
 }
 
-/* input[type="password"] {
-  width: 25px !important;
-  height: 25px !important;
-  text-align: left !important;
-  margin: 0 !important;
-} */
+input[type="password"] {
+  font-size: 30px !important;
+}
 
 .MuiOutlinedInput-input {
   padding: 12px 14px !important;
@@ -290,7 +287,23 @@ img.stars {
   cursor: pointer;
 }
 
+.web {
+  display: none !important;
+}
+
+.mobile {
+  display: block !important;
+}
+
 @media screen and (min-width: 800px) {
+  .web {
+    display: block !important;
+  }
+
+  .mobile {
+    display: none !important;
+  }
+
   .page-heading {
     display: none;
   }

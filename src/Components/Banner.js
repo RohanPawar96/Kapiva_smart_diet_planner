@@ -5,8 +5,13 @@ export default function Banner({ handleClickOpen }) {
   return (
     <div className="banner" onClick={() => handleClickOpen(true)}>
       <img
-        className="bannerimg"
+        className="bannerimg web"
         src="https://store-5h8rqg02f8.mybigcommerce.com/content/Kapiva_smart_diet/Images/banner1.jpg"
+        alt="banner"
+      />
+      <img
+        className="bannerimg mobile"
+        src="https://store-5h8rqg02f8.mybigcommerce.com/content/Kapiva_smart_diet/Images/Smart-Diet-banner-mobile.jpg"
         alt="banner"
       />
       <div className="bannerContent">

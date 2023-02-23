@@ -19,6 +19,7 @@
     "react-flags-select": "^2.2.3",
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
+    "react18-input-otp": "^1.1.2",
     "read-more-react": "^1.0.10",
     "web-vitals": "^2.1.4"
   },

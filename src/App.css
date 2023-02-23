@@ -192,6 +192,27 @@ li {
 
 input[type="password"] {
   font-size: 30px !important;
+  margin-bottom: 10px;
+}
+
+.otp-box {
+  justify-content: space-between;
+}
+
+input.otp-field {
+  width: 50px !important;
+  height: 50px;
+  border: 1px solid #80a03c;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.otp-error {
+  border: 1px solid red !important;
+}
+
+.otp-focus {
+  border: 2px solid !important;
 }
 
 .MuiOutlinedInput-input {
@@ -298,6 +319,11 @@ img.stars {
 @media screen and (min-width: 800px) {
   .web {
     display: block !important;
+  }
+
+  input.otp-field {
+    width: 70px !important;
+    height: 70px;
   }
 
   .mobile {

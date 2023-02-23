@@ -51,10 +51,15 @@ export default function UserContactValiation({
       setError(true);
     } else {
       let verify = new firebase.auth.RecaptchaVerifier("recaptcha-container", {
-        size: "30px",
+        size: "invisible",
+        // callback: (response) => {
+        //   console.log(response);
+        //   // reCAPTCHA solved, allow signInWithPhoneNumber.
+        //   // ...
+        // },
       });
       const OtpNumber = String(setInternationCode()) + number;
-      console.log("Verification", verify);
+      // console.log("Verification", verify);
       auth
         .signInWithPhoneNumber(OtpNumber, verify)
         .then((result) => {

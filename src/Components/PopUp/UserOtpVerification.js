@@ -4,7 +4,8 @@ import Button from "@mui/material/Button";
 import DialogTitle from "@mui/material/DialogTitle";
 import Fade from "@mui/material/Fade";
 import CircularProgress from "@mui/material/CircularProgress";
-import OTPInput, { ResendOTP } from "otp-input-react";
+import { ResendOTP } from "otp-input-react";
+import OTPInput from "react18-input-otp";
 import axios from "axios";
 import { auth, firebase } from "../../Assets/js/firebase";
 
@@ -132,18 +133,15 @@ export default function UserOtpVerification({
             <OTPInput
               value={otp}
               onChange={(e) => checkOtp(e)}
-              autoFocus
-              OTPLength={6}
-              otpType="number"
-              disabled={false}
+              numInputs={6}
+              shouldAutoFocus={true}
+              containerStyle={"otp-box"}
+              // separator={<span> </span>}
               isInputNum={true}
-              // isInputSecure={true}
-              secure
-              style={{
-                justifyContent: "space-between",
-                marginTop: "2%",
-                marginBottom: "2%",
-              }}
+              inputStyle={"otp-field"}
+              errorStyle={"otp-error"}
+              hasErrored={error}
+              autoComplete={true}
             />
             {error === true ? (
               <p className="error">Please enter correct OTP</p>
